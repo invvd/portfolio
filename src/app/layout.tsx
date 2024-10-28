@@ -12,7 +12,7 @@ const geistSans = localFont({
 const baymanat = localFont({ src: './fonts/Baymanat.woff2' })
 
 export const metadata: Metadata = {
-  title: "invdev",
+  title: "invvd",
   description: "My portfolio",
 };
 
