@@ -22,13 +22,13 @@ export default function Home() {
             className="w-full h-screen object-cover backgroundImg"
           />
           <h1
-            className="text-6xl font-semibold absolute mix-blend-difference"
+            className="text-center text-6xl font-semibold absolute mix-blend-difference"
           >
             Hola, mi nombre es Daniel.
           </h1>
         </section>
-        <section className="bg-black w-full h-screen flex">
-          <div className="flex flex-col justify-center items-center w-1/2 h-full px-20">
+        <section className="mt-36 lg:mt-0 bg-black w-full h-screen lg:flex-row flex-col flex">
+          <div className="flex flex-col justify-center items-center lg:w-1/2 w-full h-full px-20">
             <Image
               alt="Foto de Perfil"
               src={profilePic}
@@ -42,7 +42,7 @@ export default function Home() {
               Desarrollador <span className="text-red-600">web y móvil</span> con experiencia y capacidad para desarrollar soluciones para la vida.
             </h3>
           </div>
-          <div className="w-1/2 h-full flex flex-col justify-center items-center">
+          <div className="lg:w-1/2 w-full h-full flex flex-col lg:justify-center items-center">
             <h2 className="text-5xl font-bold w-96 text-center">
               Tecnologías
             </h2>
