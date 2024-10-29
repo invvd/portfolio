@@ -12,3 +12,10 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.backgroundImg {
+  mask-image: linear-gradient(
+    black 80%,
+    transparent
+  );
+}
