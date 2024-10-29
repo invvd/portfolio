@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description: "My portfolio",
 };
 
+export const MenuSvg = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-7">
+<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,26 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} antialiased`}
       >
-        <header className={`${baymanat.className} flex w-full h-20 items-center text-2xl sticky top-0`}>
-          <nav className="flex px-10 w-full justify-between">
+        <header className={`${baymanat.className} flex w-full h-20 justify-center items-center text-3xl sticky top-0`}>
             <Link
               href='/'
-              className='hover:text-red-600 transition-colors'
+              className='relative hover:text-red-600 transition-colors'
             >
               Invvd
             </Link>
-            <ul className="flex flex-row gap-5">
-              <li className="hover:text-red-600 transition-colors">
-                <Link href='/'>
-                  Inicio
-                </Link>
-              </li>
-              <li className="hover:text-red-600 transition-colors">
-                <Link href='/projects'>
-                  Proyectos
-                </Link>
-              </li>
-            </ul>
+          <nav className="flex px-10 right-0 absolute">
+            <button className="hover:text-red-600 transition">
+              <MenuSvg/>
+            </button>
           </nav>
         </header>
         {children}
