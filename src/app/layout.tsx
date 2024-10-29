@@ -16,10 +16,6 @@ export const metadata: Metadata = {
   description: "My portfolio",
 };
 
-export const MenuSvg = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-7">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-</svg>
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +35,9 @@ export default function RootLayout({
           </Link>
           <nav className="flex px-10 right-0 absolute">
             <button className="hover:text-red-600 transition">
-              <MenuSvg />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-7">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
             </button>
           </nav>
         </header>
