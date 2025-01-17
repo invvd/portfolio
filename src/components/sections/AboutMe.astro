@@ -1,0 +1,51 @@
+---
+import Image from "astro/components/Image.astro";
+import UserCircleIcon from "../icons/UserCircle.astro";
+import SendIcon from "../icons/Send.astro";
+---
+
+<section id="acerca-de-mi" class="mt-40">
+  <div
+    class="textGlow font-bold text-4xl items-center w-fit m-auto lg:text-5xl mb-4 flex"
+  >
+    <UserCircleIcon class="mr-4 size-14" />
+    <h2>Acerca de mi</h2>
+  </div>
+  <div class="flex flex-col lg:flex-row items-center justify-center">
+    <Image
+      src="/dani.webp"
+      width={500}
+      height={500}
+      alt="Foto de Daniel Mass"
+      class="object-cover size-52 lg:my-0 lg:mr-[6svw] lg:size-60 rounded-2xl border-2 border-white/10 shadow-lg shadow-black/20 mb-8 mt-4 hover:scale-110 transition duration-300"
+    />
+    <div class="w-full">
+      <p class="text-pretty text-lg">
+        <span class="text-purple-400">Mi nombre es Daniel</span> pero suelen llamarme
+        <strong>Dani</strong>. Comencé a adentrarme en el mundo del desarrollo,
+        diseño y programación web el año 2023 con todo. <br />
+        A pesar del <em class="mr-1">"poco"</em> tiempo que llevo trabajando en esta
+        área, me considero una persona <strong>perfeccionista</strong> y <strong
+          >excelente</strong
+        > para todo lo que hago. Actualmente estoy <span
+          >estudiando <strong
+            >Ing. Civil Informática en la Universidad Andrés Bello de Chile</strong
+          > y trabajando como freelancer creando páginas web.</span
+        >
+      </p><br />
+      <p class="text-pretty text-lg">
+        Una parte esencial de mi vida es la música; sin embargo, por encima de
+        todo, <strong
+          >soy un fiel seguidor de Jesús, a quien le debo toda mi existencia.</strong
+        >
+      </p>
+    </div>
+  </div>
+  <a
+    href="#contacto"
+    class="my-4 flex items-center text-xl px-4 py-1 rounded-full shadow-xl shadow-black/20 hover:-translate-y-1 ease-in-out mx-auto w-fit backdrop-blur-xl border-2 border-white/10 hover:bg-black/90 transition hover:border-black/90 group"
+  >
+    <SendIcon class="mr-2 group-hover:-translate-y-1 transition" />
+    Contáctame!
+  </a>
+</section>

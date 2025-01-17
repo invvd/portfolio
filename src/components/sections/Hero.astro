@@ -1,0 +1,72 @@
+---
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+const TAGS = [
+  {
+    Icon: LinkedInIcon,
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/daniel-mass-jamet-a50b70316/",
+  },
+  {
+    Icon: GitHubIcon,
+    name: "GitHub",
+    link: "https://github.com/invvd",
+  },
+  {
+    Icon: MailIcon,
+    name: "Mail",
+    link: "mailto:danymassmcf@gmail.com",
+  },
+];
+---
+
+<section class="pt-36 flex items-center text-white/90">
+  <div>
+    <div class="mb-2 flex sm:flex-row items-center flex-col">
+      <h1 class="font-bold text-4xl lg:text-5xl mb-4">
+        👋🏻, soy <em class="textGlow">Daniel Mass</em>!
+      </h1>
+      <div
+        class="text-base mx-4 mb-4 mt-2 w-fit text-center backdrop-blur-xl border-2 border-white/10 rounded-full px-3"
+      >
+        Disponible
+      </div>
+    </div>
+    <p class="text-pretty max-w-prose md:text-lg">
+      <strong>Bienvenido a mi portafolio</strong>. Con <span
+        class="text-purple-200">varios proyectos de experiencia</span
+      > en el desarrollo web, me especializo en crear aplicaiones <strong
+        class="text-purple-200">personalizadas</strong
+      >
+      y de <strong class="text-purple-200">alto rendimiento</strong>. Desde el
+      diseño de interfaces atractivas hasta la implementación de funcionalidades
+      avanzadas, <strong
+        >mi objetivo es convertir ideas en realidades funcionales, estéticas y
+        de alta calidad</strong
+      >.
+    </p>
+
+    <nav class="grid grid-flow-col auto-cols-min gap-4">
+      {
+        TAGS.map(({ Icon, name, link }) => (
+          <a
+            class="hover:bg-white/10 transition duration-200 text-base mt-4 flex w-fit items-center justify-between text-center backdrop-blur-xl border-2 border-white/10 rounded-full px-3"
+            rel="noreferrer noopener"
+            target={link === "mailto:danymassmcf@gmail.com" ? "" : "_blank"}
+            href={link}
+          >
+            <Icon class="size-4 mr-2" />
+            {name}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</section>
+
+<style>
+  a {
+    box-shadow: 0 0 10px 2px rgba(102, 51, 238, 0.2);
+  }
+</style>

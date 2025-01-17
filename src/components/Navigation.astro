@@ -1,0 +1,67 @@
+---
+import MenuIcon from "./icons/Menu.astro";
+import ChevronLeftIcon from "./icons/ChevronLeft.astro";
+const { sections } = Astro.props;
+---
+
+<nav class="grid grid-flow-col gap-x-8 place-items-center">
+  {
+    sections.map(({ title, url }: { title: string; url: string }) => (
+      <a
+        class="hidden lg:block text-lg hover:text-white transition duration-300"
+        href={url}
+      >
+        {title}
+      </a>
+    ))
+  }
+  <button id="menuButton" class="lg:hidden">
+    <MenuIcon class="textGlow" />
+  </button>
+</nav>
+
+<aside
+  id="sideBar"
+  class="fixed translate-x-full transition-all backdrop-blur-lg border-l-2 border-white/10 w-2/3 h-full top-0 right-0 z-20"
+>
+  <div class="w-full flex justify-start py-2">
+    <button id="sidebarClose"><ChevronLeftIcon class="size-7" /></button>
+  </div>
+  <nav class="grid grid-flow-row">
+    {
+      sections.map(({ title, url }: { title: string; url: string }) => (
+        <a
+          class={`text-xl ${title === "Inicio" && "border-t-2"} border-b-2 border-white/10 transition py-2 px-2`}
+          href={url}
+        >
+          {title}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const sidebarClose = document.getElementById("sidebarClose");
+  const sideBar = document.getElementById("sideBar");
+  menuButton.addEventListener("click", (e) => {
+    sideBar.classList.toggle("translate-x-full");
+  });
+  sidebarClose.addEventListener("click", (e) => {
+    sideBar.classList.toggle("translate-x-full");
+  });
+</script>
+
+<style>
+  button {
+    filter: drop-shadow(0 0 5px #63e);
+  }
+
+  a {
+    transition: filter color 0.2s ease-in-out;
+  }
+  a:hover {
+    filter: drop-shadow(0 0 2px #63e);
+  }
+</style>

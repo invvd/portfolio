@@ -1,0 +1,77 @@
+---
+import ToolsIcon from "../icons/Tools.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import TypescriptIcon from "../icons/Typescript.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import JavascriptIcon from "../icons/Javascript.astro";
+import PostgresIcon from "../icons/Postgres.astro";
+import MySQLIcon from "../icons/MySQL.astro";
+import CSSIcon from "../icons/CSS.astro";
+import NextIcon from "../icons/Next.astro";
+import FigmaIcon from "../icons/Figma.astro";
+
+const TECHS = [
+  {
+    Icon: TailwindIcon,
+    name: "Tailwind CSS",
+  },
+  {
+    Icon: GitHubIcon,
+    name: "GitHub",
+  },
+  {
+    Icon: TypescriptIcon,
+    name: "Typescript",
+  },
+  {
+    Icon: AstroIcon,
+    name: "Astro",
+  },
+  {
+    Icon: JavascriptIcon,
+    name: "Javascript",
+  },
+  {
+    Icon: PostgresIcon,
+    name: "PostgreSQL",
+  },
+  {
+    Icon: MySQLIcon,
+    name: "MySQL",
+  },
+  {
+    Icon: CSSIcon,
+    name: "CSS",
+  },
+  {
+    Icon: NextIcon,
+    name: "Next.js",
+  },
+  {
+    Icon: FigmaIcon,
+    name: "Figma",
+  },
+];
+---
+
+<section id="tecnologias" class="mt-40">
+  <div
+    class="textGlow font-bold text-4xl items-center w-fit m-auto lg:text-5xl mb-12 flex"
+  >
+    <ToolsIcon class="mr-4 size-14" />
+    <h2 class="text-center">Tecnologías</h2>
+  </div>
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8"
+  >
+    {
+      TECHS.map(({ Icon, name }) => (
+        <div class="border-2 backdrop-blur-xl shadow-lg shadow-black/10 border-white/10 flex w-full h-full flex-col items-center justify-center rounded-xl py-4 px-2 group">
+          <Icon class="group-hover:-translate-y-2 group-hover:rotate-6 transition-all size-16 mb-2" />
+          <h3 class="text-2xl font-bold text-center text-white/90">{name}</h3>
+        </div>
+      ))
+    }
+  </div>
+</section>

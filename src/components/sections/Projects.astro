@@ -1,0 +1,85 @@
+---
+import CodeIcon from "../icons/Code.astro";
+import Image from "astro/components/Image.astro";
+import AstroTag from "../tags/Astro.astro";
+import TailwindTag from "../tags/Tailwind.astro";
+import TypeScriptTag from "../tags/Typescript.astro";
+import LinkIcon from "../icons/Link.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+
+const PROJECTS = [
+  {
+    title: "Landing Page Autónomas",
+    description:
+      "Página web estática con diseño responsive y optimizada en rendimiento.",
+    link: "https://autonomas.cl",
+    ghLink: null,
+    image: "/projects/autonomas.webp",
+    tags: ["Astro", "Tailwind", "TypeScript"],
+    year: 2025,
+  },
+  /*  {
+    title: "Portfolio Personal",
+    description: "Diseño y desarrollo de mi sitio web personal.",
+  }, */
+];
+---
+
+<section id="proyectos" class="mt-40 flex-col flex items-center">
+  <div class="textGlow flex m-auto items-center justify-center mb-8">
+    <CodeIcon class="mr-4 size-14" />
+    <h2 class="text-center flex items-center text-4xl lg:text-5xl font-bold">
+      Proyectos
+    </h2>
+  </div>
+  <div class="grid gap-8 lg:grid-cols-2">
+    {
+      PROJECTS.map(
+        ({ title, description, link, image, tags, year, ghLink }) => (
+          <div
+            class={`shadow-xl ${PROJECTS.length === 1 && "col-span-2"} shadow-black/20 backdrop-blur-xl w-fit py-5 px-10 border-2 border-white/10 flex flex-col justify-center rounded-xl`}
+          >
+            <h3 class="text-2xl text-center font-bold">{title}</h3>
+            <span class="w-full text-center text-purple-500 mt-2">{year}</span>
+            <Image
+              loading="eager"
+              width={1920}
+              height={1440}
+              class="rounded-xl m-auto w-80 h-auto my-4 hover:w-[20.5rem] object-cover transition-all duration-500"
+              alt="Captura de pantalla de la landing page de Autónomas."
+              src={image}
+            />
+            <div class="grid grid-flow-col auto-cols-min gap-2 mb-2">
+              {tags.includes("Tailwind") ? <TailwindTag /> : ""}
+              {tags.includes("Astro") ? <AstroTag /> : ""}
+              {tags.includes("TypeScript") ? <TypeScriptTag /> : ""}
+            </div>
+            <p class="text-base max-w-72 line-clamp-2 mb-1 text-balance">
+              {description}
+            </p>
+            <div class="flex mt-2 justify-between">
+              <a
+                href={ghLink}
+                class={`${ghLink ? "hover:bg-purple-900/50" : "text-gray-400 bg-gray-500/50"} backdrop-blur-xl mr-2 border-2 border-white/10 flex-grow rounded-full text-center flex justify-center  transition py-1 px-2 text-lg items-center`}
+              >
+                <GitHubIcon
+                  class={`${!ghLink && "text-gray-400"} mr-2 size-6`}
+                />
+                Ver Código
+              </a>
+              <a
+                href={link}
+                rel="noopener noreferrer"
+                target="_blank"
+                class="backdrop-blur-xl border-2 hover:bg-blue-900/50 transition  border-white/10 flex-grow rounded-full text-center flex justify-center py-1 px-2 ml-2 text-lg items-center"
+              >
+                <LinkIcon class="mr-2 size-6" />
+                Ver Proyecto
+              </a>
+            </div>
+          </div>
+        )
+      )
+    }
+  </div>
+</section>

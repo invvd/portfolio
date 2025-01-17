@@ -1,0 +1,34 @@
+---
+import Image from "astro/components/Image.astro";
+import Navigation from "./Navigation.astro";
+
+const sections = [
+  { title: "Inicio", url: "/" },
+  { title: "Proyectos", url: "#proyectos" },
+  { title: "Tecnologías", url: "#tecnologias" },
+  { title: "Acerca de mi", url: "#acerca-de-mi" },
+  { title: "Contacto", url: "#contacto" },
+];
+---
+
+<header class="items-center justify-between text-white/90 flex">
+  <div class="flex items-center">
+    <Image
+      loading="eager"
+      width={500}
+      height={500}
+      src="/dani.webp"
+      alt="Foto de perfil de Daniel Mass"
+      class="mr-4 size-12 rounded-full"
+      draggable="false"
+    />
+    <h1 class="text-xl flex items-center font-semibold">Daniel Mass</h1>
+  </div>
+  <Navigation sections={sections} />
+</header>
+
+<style>
+  h1 {
+    filter: drop-shadow(0 0 5px #63e);
+  }
+</style>
