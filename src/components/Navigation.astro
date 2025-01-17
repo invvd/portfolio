@@ -45,11 +45,11 @@ const { sections } = Astro.props;
   const menuButton = document.getElementById("menuButton");
   const sidebarClose = document.getElementById("sidebarClose");
   const sideBar = document.getElementById("sideBar");
-  menuButton.addEventListener("click", (e) => {
-    sideBar.classList.toggle("translate-x-full");
+  menuButton?.addEventListener("click", (e) => {
+    sideBar?.classList.toggle("translate-x-full");
   });
-  sidebarClose.addEventListener("click", (e) => {
-    sideBar.classList.toggle("translate-x-full");
+  sidebarClose?.addEventListener("click", (e) => {
+    sideBar?.classList.toggle("translate-x-full");
   });
 </script>
 
