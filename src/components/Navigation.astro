@@ -22,7 +22,7 @@ const { sections } = Astro.props;
 
 <aside
   id="sideBar"
-  class="fixed top-0 left-0 bg-black w-[110vw] translate-x-[110%] h-[110vh] transition-all"
+  class="fixed top-0 left-0 bg-black w-[110vw] translate-x-[110%] h-[110vh] transition-all opacity-0"
 >
   <nav class="grid grid-flow-row bg-black">
     <button
@@ -63,11 +63,13 @@ const { sections } = Astro.props;
   menuButton?.addEventListener("click", (e) => {
     e.preventDefault();
     sideBar?.classList.toggle("translate-x-[110%]");
+    sideBar?.classList.toggle("opacity-0");
     menuButton?.classList.toggle("opacity-0");
   });
   closeSidebar?.addEventListener("click", (e) => {
     e.preventDefault();
     sideBar?.classList.toggle("translate-x-[110%]");
+    sideBar?.classList.toggle("opacity-0");
     menuButton?.classList.toggle("opacity-0");
   });
 </script>
