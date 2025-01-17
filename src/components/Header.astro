@@ -1,30 +1,39 @@
 ---
 import Image from "astro/components/Image.astro";
 import Navigation from "./Navigation.astro";
+import HomeIcon from "./icons/Home.astro";
+import CodeIcon from "./icons/Code.astro";
+import ToolsIcon from "./icons/Tools.astro";
+import UserCircleIcon from "./icons/UserCircle.astro";
+import MobileMessageIcon from "./icons/MobileMessage.astro";
 
 const sections = [
-  { title: "Inicio", url: "/" },
-  { title: "Proyectos", url: "#proyectos" },
-  { title: "Tecnologías", url: "#tecnologias" },
-  { title: "Acerca de mi", url: "#acerca-de-mi" },
-  { title: "Contacto", url: "#contacto" },
+  { Icon: HomeIcon, title: "Inicio", url: "/" },
+  { Icon: CodeIcon, title: "Proyectos", url: "#proyectos" },
+  { Icon: ToolsIcon, title: "Tecnologías", url: "#tecnologias" },
+  { Icon: UserCircleIcon, title: "Acerca de mi", url: "#acerca-de-mi" },
+  { Icon: MobileMessageIcon, title: "Contacto", url: "#contacto" },
 ];
 ---
 
-<header class="items-center justify-between text-white/90 flex">
-  <div class="flex items-center">
-    <Image
-      loading="eager"
-      width={500}
-      height={500}
-      src="/dani.webp"
-      alt="Foto de perfil de Daniel Mass"
-      class="mr-4 size-12 rounded-full"
-      draggable="false"
-    />
-    <h1 class="text-xl flex items-center font-semibold">Daniel Mass</h1>
+<header
+  class="sticky top-0 w-full z-10 backdrop-brightness-[5%] border-b-2 border-gray-800/10 py-1 px-3 shadow-lg items-center justify-center text-white/90 flex"
+>
+  <div class="max-w-[1140px] flex w-full justify-between">
+    <div class="flex items-center">
+      <Image
+        loading="eager"
+        width={500}
+        height={500}
+        src="/dani.webp"
+        alt="Foto de perfil de Daniel Mass"
+        class="mr-4 size-12 rounded-full"
+        draggable="false"
+      />
+      <h1 class="text-xl flex items-center font-semibold">Daniel Mass</h1>
+    </div>
+    <Navigation sections={sections} />
   </div>
-  <Navigation sections={sections} />
 </header>
 
 <style>

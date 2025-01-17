@@ -15,41 +15,60 @@ const { sections } = Astro.props;
       </a>
     ))
   }
-  <button id="menuButton" class="lg:hidden">
+  <button id="menuButton" class="lg:hidden z-10">
     <MenuIcon class="textGlow" />
   </button>
 </nav>
 
 <aside
   id="sideBar"
-  class="fixed translate-x-full transition-all backdrop-blur-lg border-l-2 border-white/10 w-2/3 h-full top-0 right-0 z-20"
+  class="fixed top-0 left-0 bg-black w-[110vw] translate-x-[110%] h-[110vh] transition-all"
 >
-  <div class="w-full flex justify-start py-2">
-    <button id="sidebarClose"><ChevronLeftIcon class="size-7" /></button>
-  </div>
-  <nav class="grid grid-flow-row">
+  <nav class="grid grid-flow-row bg-black">
+    <button
+      id="closeSidebar"
+      class={`text-xl items-center flex border-b-2 border-white/10 transition py-2 px-4 h-full w-full`}
+    >
+      <ChevronLeftIcon class="size-6 mr-2" />
+      Cerrar
+    </button>
     {
-      sections.map(({ title, url }: { title: string; url: string }) => (
-        <a
-          class={`text-xl ${title === "Inicio" && "border-t-2"} border-b-2 border-white/10 transition py-2 px-2`}
-          href={url}
-        >
-          {title}
-        </a>
-      ))
+      sections.map(
+        ({
+          title,
+          url,
+          Icon,
+        }: {
+          title: string;
+          url: string;
+          Icon: Function;
+        }) => (
+          <a
+            class={`text-xl items-center flex border-b-2 border-white/10 transition py-2 px-4 h-full w-full`}
+            href={url}
+          >
+            <Icon class="size-6 mr-2" />
+            {title}
+          </a>
+        )
+      )
     }
   </nav>
 </aside>
 
 <script>
   const menuButton = document.getElementById("menuButton");
-  const sidebarClose = document.getElementById("sidebarClose");
+  const closeSidebar = document.getElementById("closeSidebar");
   const sideBar = document.getElementById("sideBar");
   menuButton?.addEventListener("click", (e) => {
-    sideBar?.classList.toggle("translate-x-full");
+    e.preventDefault();
+    sideBar?.classList.toggle("translate-x-[110%]");
+    menuButton?.classList.toggle("opacity-0");
   });
-  sidebarClose?.addEventListener("click", (e) => {
-    sideBar?.classList.toggle("translate-x-full");
+  closeSidebar?.addEventListener("click", (e) => {
+    e.preventDefault();
+    sideBar?.classList.toggle("translate-x-[110%]");
+    menuButton?.classList.toggle("opacity-0");
   });
 </script>
 
