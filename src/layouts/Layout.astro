@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import Header from "../components/Header.astro";
       <slot />
     </div>
   </body>
+  <Footer />
 </html>
 
 <style is:global>
@@ -32,7 +34,6 @@ import Header from "../components/Header.astro";
     background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-x: hidden;
   }
 
   html,
@@ -41,9 +42,9 @@ import Header from "../components/Header.astro";
     padding: 0;
     width: 100%;
     font-family: "Satoshi Variable", system-ui, sans-serif;
-
     color: #fff;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   @media (prefers-reduced-motion) {
