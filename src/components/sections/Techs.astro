@@ -65,11 +65,6 @@ const TECHS = [
 ];
 ---
 
-<script>
-  import AOS from "aos";
-  AOS.init({ once: true });
-</script>
-
 <section id="tecnologias" class="mt-40">
   <div
     data-aos="zoom-out"
@@ -87,6 +82,7 @@ const TECHS = [
         <div
           data-aos="fade-up"
           data-aos-duration="300"
+          data-aos-delay={`${100 * (i % 4)}`}
           class="border-2 backdrop-blur-xl shadow-lg shadow-black/10 border-white/10 flex w-full h-full flex-col items-center justify-center rounded-xl py-4 px-2 group"
         >
           <Icon class="group-hover:-translate-y-2 group-hover:rotate-6 transition-all size-16 mb-2" />
