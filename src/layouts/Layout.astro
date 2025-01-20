@@ -13,69 +13,77 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Daniel Mass | Portfolio</title>
   </head>
+  <div class="background"></div>
   <body class="text-white">
     <Header />
     <div class="px-10 max-w-[1140px] m-auto">
       <slot />
     </div>
   </body>
+
   <Footer />
-</html>
 
-<style is:global>
-  @font-face {
-    font-family: "Satoshi Variable";
-    src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
+  <style is:global>
+    @font-face {
+      font-family: "Satoshi Variable";
+      src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
 
-  html {
-    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+    .background {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      z-index: -10;
+      background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+      background-size: auto;
+      background-repeat: no-repeat;
+    }
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: "Satoshi Variable", system-ui, sans-serif;
-    color: #fff;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  @media (prefers-reduced-motion) {
+    html,
     body {
-      scroll-behavior: auto;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: "Satoshi Variable", system-ui, sans-serif;
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
-  }
 
-  .textGlow {
-    font-style: normal;
-    color: #fff;
-    filter: drop-shadow(0 0 10px rgba(102, 51, 238, 0));
-    animation: shadowPulse 3s ease-in-out infinite;
-  }
+    @media (prefers-reduced-motion) {
+      body {
+        scroll-behavior: auto;
+      }
+    }
 
-  @keyframes shadowPulse {
-    0% {
-      filter: drop-shadow(
-        0 0 10px rgba(102, 51, 238, 0)
-      ); /* Sombra invisible al inicio */
+    .textGlow {
+      font-style: normal;
+      color: #fff;
+      filter: drop-shadow(0 0 10px rgba(102, 51, 238, 0));
+      animation: shadowPulse 3s ease-in-out infinite;
     }
-    50% {
-      filter: drop-shadow(
-        0 0 10px rgba(102, 51, 238, 1)
-      ); /* Sombra visible a mitad de animación */
+
+    @keyframes shadowPulse {
+      0% {
+        filter: drop-shadow(
+          0 0 10px rgba(102, 51, 238, 0)
+        ); /* Sombra invisible al inicio */
+      }
+      50% {
+        filter: drop-shadow(
+          0 0 10px rgba(102, 51, 238, 1)
+        ); /* Sombra visible a mitad de animación */
+      }
+      100% {
+        filter: drop-shadow(
+          0 0 10px rgba(102, 51, 238, 0)
+        ); /* Vuelve a sombra invisible */
+      }
     }
-    100% {
-      filter: drop-shadow(
-        0 0 10px rgba(102, 51, 238, 0)
-      ); /* Vuelve a sombra invisible */
-    }
-  }
-</style>
+  </style>
+
+
+</html>
