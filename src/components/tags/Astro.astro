@@ -2,7 +2,10 @@
 import AstroIcon from "../icons/AstroIcon.astro";
 ---
 
-<div class="flex gap-2 bg-[#63e]/30 rounded-full w-fit px-3 items-center">
+<div
+  {...Astro.props}
+  class="flex gap-2 bg-[#63e]/30 rounded-full w-fit px-3 items-center"
+>
   <AstroIcon class="size-4" />
   <span>Astro</span>
 </div>

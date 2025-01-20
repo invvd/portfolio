@@ -7,6 +7,12 @@ import Techs from "../components/sections/Techs.astro";
 import Contacto from "../components/sections/Contacto.astro";
 ---
 
+<script>
+  import AOS from "aos";
+
+  AOS.init({ once: true });
+</script>
+
 <Layout>
   <Hero />
   <Projects />
