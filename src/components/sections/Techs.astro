@@ -83,8 +83,12 @@ const TECHS = [
     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 place-items-center gap-8"
   >
     {
-      TECHS.map(({ Icon, name }) => (
-        <div class="border-2 backdrop-blur-xl shadow-lg shadow-black/10 border-white/10 flex w-full h-full flex-col items-center justify-center rounded-xl py-4 px-2 group">
+      TECHS.map(({ Icon, name }, i) => (
+        <div
+          data-aos="fade-up"
+          data-aos-duration="300"
+          class="border-2 backdrop-blur-xl shadow-lg shadow-black/10 border-white/10 flex w-full h-full flex-col items-center justify-center rounded-xl py-4 px-2 group"
+        >
           <Icon class="group-hover:-translate-y-2 group-hover:rotate-6 transition-all size-16 mb-2" />
           <h3 class="text-2xl font-bold text-center text-white/90">{name}</h3>
         </div>
