@@ -21,7 +21,17 @@ const TAGS = [
 ];
 ---
 
-<section class="pt-36 flex items-center text-white/90">
+<script>
+  import AOS from "aos";
+
+  AOS.init({ once: true });
+</script>
+
+<section
+  data-aos="fade-right"
+  data-aos-duration="700"
+  class="pt-36 flex items-center text-white/90"
+>
   <div>
     <div class="mb-2 flex sm:flex-row items-center flex-col">
       <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
@@ -49,9 +59,12 @@ const TAGS = [
 
     <nav class="grid grid-flow-col auto-cols-min gap-4">
       {
-        TAGS.map(({ Icon, name, link }) => (
+        TAGS.map(({ Icon, name, link }, i) => (
           <a
-            class="hover:bg-white/10 transition duration-200 text-base mt-4 flex w-fit items-center justify-between text-center backdrop-blur-xl border-2 border-white/10 rounded-full px-3"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay={`${500 + 500 * i}`}
+            class="hover:bg-white/10 transition text-base mt-4 flex w-fit items-center justify-between text-center backdrop-blur-xl border-2 border-white/10 rounded-full px-3"
             rel="noreferrer noopener"
             target={link === "mailto:danymassmcf@gmail.com" ? "" : "_blank"}
             href={link}

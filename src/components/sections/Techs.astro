@@ -65,8 +65,15 @@ const TECHS = [
 ];
 ---
 
+<script>
+  import AOS from "aos";
+  AOS.init({ once: true });
+</script>
+
 <section id="tecnologias" class="mt-40">
   <div
+    data-aos="zoom-out"
+    data-aos-duration="500"
     class="textGlow font-bold text-4xl items-center w-fit m-auto lg:text-5xl mb-12 flex"
   >
     <ToolsIcon class="mr-4 size-14" />
